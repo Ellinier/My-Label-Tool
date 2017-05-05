@@ -5,7 +5,10 @@
 [https://github.com/OpenKinect/libfreenect2](https://github.com/OpenKinect/libfreenect2 "GitHub-libfreenect2")
 
 若安装成功，即运行Demo程序`./bin/Protonect`，则可出现对应图像
-##安装对应python库pylibfreenct2##
+
+安装对应python库pylibfreenct2
+-------------------------------------
+
 [https://github.com/r9y9/pylibfreenect2](https://github.com/r9y9/pylibfreenect2 "pylibfreenect2")
 
 检查是否安装成功，可在terminal内运行python环境，即输入`python`回车，`import pylibfreenect2`没有报错则说明安装成功

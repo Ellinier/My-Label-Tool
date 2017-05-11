@@ -1,6 +1,6 @@
-#图像采集及标注#
+图像采集及标注
 ------------------------------------
-##安装libfreenect2
+安装libfreenect2
 ------------------------------------
 [https://github.com/OpenKinect/libfreenect2](https://github.com/OpenKinect/libfreenect2 "GitHub-libfreenect2")
 

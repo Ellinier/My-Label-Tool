@@ -34,10 +34,10 @@
 - 将标注生成的.txt文件转换成.xml文件：将需要参与转换的对应图像放到JPEGImages目录下，切换至bbox-label-tools目录，运行create_xml.py即可，即`python create_xml.py`，会在Annotations目录下生成JPEGImages中所有图像对应的.xml文件
 
 - 生成ImageSet中Main下的.txt文件：执行generate_dataset.py，根据需求带需要的参数
- - `python generate_dataset.py --start-index 1 --end-index 1400 --test-pro 0.04 --train-pro 0.48`，表示编号1-1400的图像（单类别），其中，test的图像为56张，trainval的图像为1344，train的图像为672张，val的图像为672张。
- - `python generate_dataset.py --start-index 1401 --end-index 1600 --test-pro 0.72 --train-pro 0.14`，表示编号为1401-1600的图像（多类别），其中，test的图像为144张，trainval的图像为56张，train的图像为28张，val的图像为28张。
- - `python generate_dataset.py --start-index 1601 --end-index 3200 --test-pro 0.04 --train-pro 0.48`，表示编号为1601-3200的图像（单类别），其中，test的图像为64张，trainval的图像为1536张，train的图像为768张，val的图像为768张。
- - `python generate_dataset.py --start-index 3201 --end-index 3400 --test-pro 0.72 --train-pro 0.14`，表示编号为3201-3400的图像（多类别），其中，test的图像为144张，trainval的图像为56张，train的图像为28张，val的图像为28张。
+ - `python generate_dataset.py --start-index 1 --end-index 1400 --test-pro 0.04 --val-pro 0.48`，表示编号1-1400的图像（单类别），其中，test的图像为56张，trainval的图像为1344，train的图像为672张，val的图像为672张。
+ - `python generate_dataset.py --start-index 1401 --end-index 1600 --test-pro 0.72 --val-pro 0.14`，表示编号为1401-1600的图像（多类别），其中，test的图像为144张，trainval的图像为56张，train的图像为28张，val的图像为28张。
+ - `python generate_dataset.py --start-index 1601 --end-index 3200 --test-pro 0.04 --val-pro 0.48`，表示编号为1601-3200的图像（单类别），其中，test的图像为64张，trainval的图像为1536张，train的图像为768张，val的图像为768张。
+ - `python generate_dataset.py --start-index 3201 --end-index 3400 --test-pro 0.72 --val-pro 0.14`，表示编号为3201-3400的图像（多类别），其中，test的图像为144张，trainval的图像为56张，train的图像为28张，val的图像为28张。
  - 这四条命令按顺序执行则会在最终Main中得到随机抽取的按顺序排列的相应图像序列组。
 
 整理成Pascal VOC2007
@@ -66,5 +66,7 @@ SSD网络参数训练
 --------------------------------------
 
 - 进入result目录，新建文件夹ResultFor15Cls，进入该目录，新建文件夹（用于保存此次训练的预测结果）
-- 未完待续
+- 打开脚本`/ssd_mxnet/detect/detector.py`
+- 改148行`fig.savefig('results/ResultFor15Cls/'+ path.split('/')[-1])`中的`ResultFor15Cls`为保存该次预测结果的文件夹名称，并保存
+- 切换目录至`/ssd_mxnet`，带参运行demo程序，`python demo.py --epoch 300`，即可在result目录下的对应文件夹中生成各图预测的可视化结果
 

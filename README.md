@@ -1,6 +1,6 @@
-图像采集及标注
+#图像采集及标注#
 ------------------------------------
-安装libfreenect2
+##安装libfreenect2
 ------------------------------------
 [https://github.com/OpenKinect/libfreenect2](https://github.com/OpenKinect/libfreenect2 "GitHub-libfreenect2")
 
@@ -69,4 +69,13 @@ SSD网络参数训练
 - 打开脚本`/ssd_mxnet/detect/detector.py`
 - 改148行`fig.savefig('results/ResultFor15Cls/'+ path.split('/')[-1])`中的`ResultFor15Cls`为保存该次预测结果的文件夹名称，并保存
 - 切换目录至`/ssd_mxnet`，带参运行demo程序，`python demo.py --epoch 300`，即可在result目录下的对应文件夹中生成各图预测的可视化结果
+
+需要保存的参数
+--------------------------------------
+`/ssd_mxnet/model/`
+`/ssd_mxnet/data/VOCdevkit/results`
+
+今晚可以做的实验
+-------------------------------------
+- 改单类多类在训练测试集中的分布，`python generate_dataset.py --start-index 1 --end-index 3500 --test-pro 0.137 --val-pro 0.4315`
 

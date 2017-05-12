@@ -21,12 +21,18 @@
 - 下载公共文件夹\tmp下的bbox-label-tools
 - 切换路径至该目录下，`python collect_a_frame.py`执行collect_a_frame的python文件，该文件调用libfreenect2的python接口显示当前图像，通过按键控制可保存图像，按键盘`f`键可保存RGB图像、ir图像、depth图像以及点云信息至默认文件夹，按键`q`可退出程序
 - 可通过传递参数设定图像保存目录，如`python collect_a_frame.py --dir "home/iiie/pic/crayon" --num 100`可将图像保存至/home/iiie/pic/crayon目录下，起始的彩色图像序号为000100.jpg
-##裁剪RGB图像##
+
+裁剪RGB图像
+------------------------------
+
 - 在相应对象文件夹如crayon下创建crop_rgb文件，用于存放裁剪后的RGB图像
 - 切换至bbox-label-tools目录下
 - 运行cropto300文件，即`python cropto300.py`得到crop_rgb目录下裁剪后的图像
 - 若裁剪移位可通过更改程序中的参数[120:420][300:600]来调整裁剪的范围，但需保持裁剪后的图像尺寸为300*300。
-##人工标注RGB图像##
+
+人工标注RGB图像
+------------------------------
+
 - 将crayon下的crop_rgb软链接到bbox-label-tools/Images下，并以三位数字命名，软连接命令为`ln -s 原地址 目的地址`
 - 切换至bbox-label-tools目录下
 - 运行create_bbox文件，即`python creat_bbox.py`，若出现缺少ImageTk插件提示，则安装该插件，然后在该界面下标注目标对象。先选择对象类别，再标注，标注生成的信息会保存在label文件夹下的对应目录中。

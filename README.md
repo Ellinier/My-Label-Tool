@@ -72,10 +72,15 @@ SSD网络参数训练
 
 需要保存的参数
 --------------------------------------
-`/ssd_mxnet/model/`
-`/ssd_mxnet/data/VOCdevkit/results`
+- `/ssd_mxnet/model/ssd_300-0300.params`
+- `/ssd_mxnet/model/ssd_300-symbol.json`
+- `/ssd_mxnet/log/XX.log`
+- (optional)切换目录至`/ssd_mxnet`，运行`python deploy.py --epoch 300`，然后保存生成的两个文件
+  - `/ssd_mxnet/model/deploy_ssd_300-0300.aprams`
+  - `/ssd_mxnet/model/deploy_ssd_300-symbol.json`
 
-今晚可以做的实验
--------------------------------------
-- 改单类多类在训练测试集中的分布，`python generate_dataset.py --start-index 1 --end-index 3500 --test-pro 0.137 --val-pro 0.4315`
+- （optioanl）检测结果
+ - `/ssd_mxnet/result/XXX`
+ - `/ssd_mxnet/data/VOCdevkit/results/VOC2007/Main`
+ 
 

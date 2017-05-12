@@ -80,7 +80,7 @@ SSD网络参数训练
   - `/ssd_mxnet/model/deploy_ssd_300-symbol.json`
 
 - （optioanl）检测结果
- - `/ssd_mxnet/result/XXX`
- - `/ssd_mxnet/data/VOCdevkit/results/VOC2007/Main`
+  - `/ssd_mxnet/result/XXX`
+  - `/ssd_mxnet/data/VOCdevkit/results/VOC2007/Main`
  
 
